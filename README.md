@@ -4,3 +4,4 @@ Config files for my GitHub profile.
 - пример 1
 - пример 2
 - пример 3
+- пример локального изменения
