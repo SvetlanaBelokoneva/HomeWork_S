@@ -5,7 +5,6 @@ public class TestingSystem {
         int questionCnt = 3, answerCnt = 5, correctCnt = 0, wrongCnt = 0;
         int userOpinion;
 
-
         //Массив вопросов
         String[] questions = new String[questionCnt];
         questions[0] = "С чего начинают первую помощь при открытом переломе конечностей, сопровождающемся кровотечением?";
@@ -72,4 +71,5 @@ public class TestingSystem {
         //Вывод общего результата
         System.out.println("Результат: правильно " + correctCnt + ", неправильно " + wrongCnt);
     }
+    //для теста push
 }
