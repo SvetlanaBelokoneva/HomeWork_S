@@ -71,5 +71,4 @@ public class TestingSystem {
         //Вывод общего результата
         System.out.println("Результат: правильно " + correctCnt + ", неправильно " + wrongCnt);
     }
-    //для теста push
 }
