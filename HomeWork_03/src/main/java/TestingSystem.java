@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.io.IOException;
 
 public class TestingSystem {
     public static void main(String[] args) {
@@ -42,7 +43,7 @@ public class TestingSystem {
         System.out.println();
 
         Scanner scan = new Scanner(System.in);
-        //Цикл по всем вопросам - исправить, написать правильно
+        //Цикл по всем вопросам
         for(int i = 0; i < questions.length; i++) {
             //Вывод вопроса на экран
             System.out.println(questions[i]);
@@ -53,18 +54,28 @@ public class TestingSystem {
             }
 
             System.out.print("Ваш ответ: ");
-            //Считывание с консоли ответа
-            userOpinion = scan.nextInt();
+            try {
+                //Считывание с консоли ответа
+                userOpinion = scan.nextInt();
 
-            //Проверка ответа и вывод результата + наращивание счетчики правильных/неправильных ответов
-            if (userOpinion == correctAnswers[i]) {
-                correctCnt++;
-                System.out.println("Верно!");
+                if(userOpinion >= answerCnt) throw new Exception("Нет ответов с таким индексом");
+
+                //Проверка ответа и вывод результата + наращивание счетчики правильных/неправильных ответов
+                if (userOpinion == correctAnswers[i]) {
+                    correctCnt++;
+                    System.out.println("Верно!");
+                }
+                else {
+                    wrongCnt++;
+                    System.out.println("Неверно.");
+                    System.out.println("Верный ответ: " + correctAnswers[i] + " (" + answerOptions[i][correctAnswers[i]-1] + ")");
+                }
             }
-            else {
-                wrongCnt++;
-                System.out.println("Неверно.");
-                System.out.println("Верный ответ: " + correctAnswers[i] + " (" + answerOptions[i][correctAnswers[i]-1] + ")");
+            catch(Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+            finally {
+                System.out.println("Допустимо вводить только целые числа");
             }
         }
 
