@@ -143,7 +143,7 @@ public class BankingSystem {
         for (int i = 0; i < clients.length; i++) {
             for (int j = randomAccountsList.size(); j < arrayDimension / clients.length * (i + 1); j++) {
                 account[j] = new Account();
-                account[j].setAccounts(START_ACCOUNT_NUMBER + j, /*clients[i],*/ rnd.nextInt(ARRAY_BOUND) + 200);
+                account[j].setAccounts(START_ACCOUNT_NUMBER + j, rnd.nextInt(ARRAY_BOUND) + 200);
                 randomAccountsList.put(account[j], clients[i]);
             }
         }
@@ -151,7 +151,7 @@ public class BankingSystem {
         //остаток от деления (оставшееся кол-восчетов) отдать первому клиенту
         for (int j = randomAccountsList.size(); j < account.length; j++) {
             account[j] = new Account();
-            account[j].setAccounts(START_ACCOUNT_NUMBER + j, /*clients[0],*/ rnd.nextInt(ARRAY_BOUND) + 200);
+            account[j].setAccounts(START_ACCOUNT_NUMBER + j, rnd.nextInt(ARRAY_BOUND) + 200);
             randomAccountsList.put(account[j], clients[0]);
         }
 

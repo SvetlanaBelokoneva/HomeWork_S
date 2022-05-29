@@ -14,10 +14,10 @@ public class Account {
     @Override
     public String toString() {
         return System.lineSeparator() + "ID счета = " + this.accountNumber + " " +
-               "Количество золотых монет = " + this.summ;
+                "Количество золотых монет = " + this.summ;
     }
 
-   @Override
+    @Override
     public int hashCode() {
         return this.accountNumber == null ? 0 : accountNumber.hashCode();
     }
