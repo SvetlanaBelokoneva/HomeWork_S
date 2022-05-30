@@ -27,7 +27,7 @@ public class ArithmeticОperations {
             resource.printMinus(x, y);
         }
         //повторный вызов кода, в котором исключение
-        catch (InputMismatchException ex){
+        catch (InputMismatchException | OurException ex){
             System.out.println("Введенные значения должны быть целыми числами: " + ex.toString());
             startRemoteCalculation(resource);
         }

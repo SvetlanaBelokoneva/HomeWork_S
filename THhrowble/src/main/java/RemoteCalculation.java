@@ -1,7 +1,7 @@
 public class RemoteCalculation implements AutoCloseable {
-    public void printMinus(int x, int y) {
+    public void printMinus(int x, int y) throws OurException {
         //выброс ошибки вверх rethrow
-        throw new RuntimeException("Метод по вычиланию чисел пока недоработан. Извините");
+            throw new OurException("Метод по вычиланию чисел пока недоработан. Извините");
     }
 
     public void printMultiply(int x, int y) {
